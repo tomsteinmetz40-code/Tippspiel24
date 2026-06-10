@@ -104,13 +104,14 @@
     <input type="search" class="search-input" data-search-table="konten-table" placeholder="Konten suchen…">
     <table class="table" id="konten-table">
         <thead>
-            <tr><th>Spieler</th><th>Klasse</th><th>Punkte</th><th>Tipps</th><th>Letzter Tipp</th><th>Aktion</th></tr>
+            <tr><th>Spieler</th><th>Klasse</th><th>PIN</th><th>Punkte</th><th>Tipps</th><th>Letzter Tipp</th><th>Aktion</th></tr>
         </thead>
         <tbody>
         {% for sp in spieler_liste %}
             <tr>
                 <td>{{ sp.spieler }}</td>
                 <td>{{ sp.klasse or "–" }}</td>
+                <td><code>{{ sp.pin or "–" }}</code></td>
                 <td><strong>{{ sp.punkte }}</strong></td>
                 <td>{{ sp.anzahl }}</td>
                 <td>{{ sp.letzter|datum }}</td>
